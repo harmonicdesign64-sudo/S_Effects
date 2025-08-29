@@ -74,7 +74,66 @@
 .navbar li {
   position: relative;
 }
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 15px 20px;
+  color: white;
+}
 
+/* Logo */
+.navbar .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Nav links */
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive (for mobile) */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .navbar .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger */
+  }
+}
 /* Hide the dropdown initially */
 .navbar li ul {
   position: absolute;
@@ -132,6 +191,7 @@
 <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <!-- Logo + Profile Image -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="flex items-center space-x-4">
       <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-gray-300 shadow-md">
         <img src="4.jpg" alt="Profile Image" class="w-full h-full object-cover">
@@ -327,8 +387,14 @@
     }
   });
 </script>
+  <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
 </body>
 </html>
+
 
 
 
