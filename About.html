@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+/* Ensure body takes full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+}
+
+/* Body as flex container */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* Main content area grows to fill space and center content */
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertically center */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto; /* horizontally center */
+  padding: 20px;
+}
+
+/* Top Text Box */
+.text-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center; /* optional: center text */
+}
+
+/* Bottom Image Box */
+.image-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Skills / Highlights Section */
+.grid {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.grid div {
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.95em;
+}
+
+/* CTA Button */
+a {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #222;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  font-size: 0.95em;
+  margin-bottom: 40px;
+}
+
+a:hover {
+  background-color: #555;
+}
+
+/* Work Grid */
+#work {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-items: center;
+}
+
+#work figure {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#work figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer always at the bottom */
+footer {
+  flex-shrink: 0;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+  .text-box, .image-box {
+    padding: 15px;
+  }
+}
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Navigation Bar -->
+<header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo + Profile Image -->
+    <div class="flex items-center space-x-4">
+      <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-gray-300 shadow-md">
+        <img src="4.jpg" alt="Profile Image" class="w-full h-full object-cover">
+      </div>
+      <div class="text-3xl font-bold tracking-wide">Shao Effects</div>
+    </div>
+
+    <!-- Navigation Links -->
+<ul class="hidden md:flex space-x-6 font-medium">
+  <li><a href="index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+  <li><a href="projects.html" class="hover:text-blue-500 transition-colors">Projects</a></li>
+  <li><a href="portraits.html" class="hover:text-blue-500 transition-colors">Portraits</a></li>
+
+  <!-- Videos Dropdown -->
+  <li class="relative">
+    <button id="videosBtn" class="flex items-center hover:text-blue-500 transition-colors focus:outline-none">
+      Videos
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <ul id="videosDropdown" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-lg rounded-lg hidden z-50">
+      <li><a href="documentary.html" class="block px-4 py-2 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-colors rounded-t-lg">Documentary</a></li>
+      <li><a href="fiction.html" class="block px-4 py-2 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-colors rounded-b-lg">Fiction</a></li>
+    </ul>
+  </li>
+
+  <li><a href="About.html" class="hover:text-blue-500 transition-colors">About</a></li>
+</ul>
+<script>
+  const btn = document.getElementById('videosBtn');
+  const dropdown = document.getElementById('videosDropdown');
+
+  // Toggle dropdown on click
+  btn.addEventListener('click', () => {
+    dropdown.classList.toggle('hidden');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+</script>
+  </header>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen p-6">
+
+<main>
+  <!-- Top Section with text on left and image on right -->
+  <div class="top-section flex flex-col md:flex-row items-center w-full max-w-700 mb-6">
+    
+    <!-- Text Box -->
+    <div class="text-box flex-1 md:mr-4 mb-4 md:mb-0">
+      <h2>Your Title Here</h2>
+      <p>
+      Shao Effects, based in Dar es Salaam, is a professional photographer dedicated to capturing the beauty, emotion, and essence of every moment. Specializing in portraits, events, and creative projects, 
+      Shao brings a unique blend of technical expertise and artistic vision to each shoot. Whether it’s a wedding, a personal portrait, a corporate event, or an experimental creative project, 
+      Shao’s work reflects attention to detail, storytelling, and a passion for visual excellence. With a keen eye for lighting, composition, and genuine expression, 
+      Shao Effects transforms ordinary scenes into extraordinary memories that clients can cherish forever. 
+      Committed to providing a personalized and professional experience, Shao ensures every photograph resonates with emotion, creativity, and authenticity, making each project a true reflection of the story it represents.
+      </p>
+    </div>
+
+    <!-- Image Box -->
+    <div class="image-box flex-1 md:ml-4">
+      <img src="shao.jpg" alt="Your Image">
+    </div>
+
+  </div>
+
+  <!-- Optional: Skills/Highlights grid or CTA button below -->
+</main>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 My Photography Portfolio. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

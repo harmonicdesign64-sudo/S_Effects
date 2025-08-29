@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Portfolio</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Work Grid Section */
+#work {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 900px;      /* keeps the grid small */
+  margin: 30px auto;     /* centers the section */
+  padding: 10px;
+}
+
+/* Project cards */
+#work .project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+#work figure {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+#work figure:hover {
+  transform: scale(1.03);
+}
+
+/* Image */
+#work img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption */
+#work figcaption {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#work figcaption .tag {
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+<!-- Navigation Bar -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <!-- Logo + Profile Image -->
+    <div class="flex items-center space-x-4">
+      <!-- Bigger Profile Circle -->
+      <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-gray-300 shadow-md">
+        <img src="4.jpg" alt="Profile Image" class="w-full h-full object-cover">
+      </div>
+      <div class="text-3xl font-bold tracking-wide">Shao Effects</div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="potraits.html">Portraits</a></li>
+      <li><a href="documentary.html">Videos</a></li>
+      <li><a href="About.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<a href="#top" class="back-top">↑ Top</a>
+  <!-- Home / Overview Section -->
+  <main class="flex-grow">
+    <section id="overview" class="max-w-7xl mx-auto px-6 py-32 text-center">
+      <h1 class="text-5xl font-bold mb-6">Shao Effects</h1>
+        <!-- About Section -->
+  <main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+      <!-- Profile Circle -->
+      <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-300 shadow-lg mx-auto mb-8">
+        <img src="shao.jpg" alt="About Me Profile" class="w-full h-full object-cover">
+      </div>
+    </section>
+
+     <!-- Work Grid -->
+      <section id="work" aria-label="Selected work" class="grid">
+        <!-- Project Card 1 -->
+        <a class="project-link" href="#" aria-label="Open Project One (replace with a real page or PDF)">
+          <figure class="zoom">
+            <img src="1.jpg" alt="Project One — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project One</span>
+              <span class="tag">2025</span>
+            </figcaption>
+          </figure>
+        </a>
+
+        <!-- Project Card 2 -->
+        <a class="project-link" href="#">
+          <figure class="zoom">
+            <img src="2.jpg" alt="Project Two — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project Two</span>
+              <span class="tag">Series</span>
+            </figcaption>
+          </figure>
+        </a>
+
+        <!-- Project Card 3 -->
+        <a class="project-link" href="#">
+          <figure class="zoom">
+            <img src="3.jpg" alt="Project Three — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project Three</span>
+              <span class="tag">Installation</span>
+            </figcaption>
+          </figure>
+        </a>
+
+        <!-- Project Card 4 -->
+        <a class="project-link" href="#">
+          <figure class="zoom">
+            <img src="4.jpg" alt="Project Four — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project Four</span>
+              <span class="tag">Photography</span>
+            </figcaption>
+          </figure>
+        </a>
+         
+         <!-- Project Card 5 -->
+        <a class="project-link" href="#" aria-label="Open Project One (replace with a real page or PDF)">
+          <figure class="zoom">
+            <img src="5.jpg" alt="Project One — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project One</span>
+              <span class="tag">2025</span>
+            </figcaption>
+          </figure>
+        </a>
+
+         <!-- Project Card 6 -->
+        <a class="project-link" href="#" aria-label="Open Project One (replace with a real page or PDF)">
+          <figure class="zoom">
+            <img src="6.jpg" alt="Project One — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project One</span>
+              <span class="tag">2025</span>
+            </figcaption>
+          </figure>
+        </a>
+
+         <!-- Project Card 7 -->
+        <a class="project-link" href="#" aria-label="Open Project One (replace with a real page or PDF)">
+          <figure class="zoom">
+            <img src="7.jpg" alt="Project One — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project One</span>
+              <span class="tag">2025</span>
+            </figcaption>
+          </figure>
+        </a>
+
+         <!-- Project Card 8 -->
+        <a class="project-link" href="#" aria-label="Open Project One (replace with a real page or PDF)">
+          <figure class="zoom">
+            <img src="8.jpg" alt="Project One — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project One</span>
+              <span class="tag">2025</span>
+            </figcaption>
+          </figure>
+        </a>
+     
+         <!-- Project Card 9 -->
+        <a class="project-link" href="#" aria-label="Open Project One (replace with a real page or PDF)">
+          <figure class="zoom">
+            <img src="9.jpg" alt="Project One — brief descriptive alt text" loading="lazy" />
+            <figcaption>
+              <span>Project One</span>
+              <span class="tag">2025</span>
+            </figcaption>
+          </figure>
+        </a>
+
+        <!-- Duplicate & customize more cards as needed -->
+      </section>
+        
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Harmonic . All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
